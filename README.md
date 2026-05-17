@@ -1,59 +1,30 @@
-# ETicaretClient
+# E-Ticaret Uygulaması - Angular UI Client
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Bu proje, full-stack bir e-ticaret sisteminin arayüz (front-end) yönetimini üstlenen; modern Angular mimarisini, asenkron veri yönetimini ve dinamik donanım entegrasyonlarını deneyimlemek amacıyla geliştirilmiş istemci uygulamasıdır.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Öne Çıkan Özellikler & Mimari Yaklaşımlar
 
-```bash
-ng serve
-```
+* **Modüler & Standalone Mimari Kombinasyonu:** Projede hem geleneksel Angular Modül yapısı (`NgModule`) hem de modern `standalone: true` bileşen mimarisi bir arada optimize edilerek temiz bir görünürlük kapsamı (scope) kurulmuştur.
+* **QR Kod ile Dinamik Stok Güncelleme:** Uygulama içi açılan bir dialog penceresi üzerinden bilgisayar/mobil kamerası entegre edilerek ürün barkodları taranır. Taranan QR kod asenkron olarak çözümlenerek (`ngx-scanner-qrcode`), ilgili ürüne ait stok miktarı backend servisleri tetiklenerek anlık güncellenir.
+* **Dinamik Yetkilendirme Arayüzü:** Yönetici (Admin) paneli üzerinden sayfa ve endpoint bazlı rol atama işlemleri dinamik dialog pencereleri (`AuthorizeMenuDialog`) üzerinden yönetilir.
+* **Gelişmiş UX Öğeleri:** İşlem süreçleri, asenkron spinner (`ngx-spinner`) ve dinamik, konumlandırılabilir bildirimler (`ngx-toastr`) ile desteklenerek kullanıcı deneyimi artırılmıştır.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 🛠️ Kullanılan Teknolojiler
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+* **Framework:** Angular (v17+)
+* **UI & Tasarım:** Angular Material (MatDialog, MatButton, MatFormField, MatInput, MatBadge vb.), Bootstrap & Custom SCSS.
+* **Donanım Entegrasyonu:** `ngx-scanner-qrcode` (ZBAR_QRCODE tabanlı tarayıcı).
+* **Yardımcı Yapılar:** jQuery (DOM manipülasyonları için entegre edilmiştir).
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Kurulum ve Çalıştırma
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Projeyi yerel bilgisayarınıza klonlayın.
+2. Proje dizinine giderek gerekli tüm npm paketlerini yükleyin:
+   ```bash
+   npm install
